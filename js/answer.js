@@ -162,13 +162,55 @@ let oddBonds=[];
  			oddBonds[i]=(`${(bondFilms[i].title)}, ${(bondFilms[i].year)}`);
  		}
  		else {
- 			oddBonds[i]=;
+ 			oddBonds[i]=``;
  		}
  	}
 console.log(oddBonds);
 
 //- fills even years with 'empty' or string - can't strip null from log
 
-// 
+// Bond Gross
+
+    		
+let revBonds=0;
+
+	for (let i = 0; i < bondFilms.length; i++) {
+		revAmt=(bondFilms[i].gross);
+		//could check string(x) for exist $, else next
+		revStr1=revAmt.replace("$", "");
+
+	let revStr2 = revStr1;
+		//could also find j<(length % 3)
+    		for (j=1;j<5;j++) {  
+    			revStr2 = revStr2.replace(",","");
+    		}
+    		
+	
+
+		revBonds+=Number(revStr2);
+		
+	}
+	console.log(revBonds);
+revString=revBonds.toString([10]);
+revLength=Math.floor((revString.length)/3);
+console.log(revLength);
+console.log(revString);
+revSplit=revString.split("");
+console.log(revSplit);
+bondTotal=[]
+	for (let k=revString.length-1; k>0; k--){
+		for (let l=0; l<3;l++) {
+			bondTotal=((revSplit[k])+bondTotal);
+			k--;
+		}
+		bondTotal=(`,${bondTotal}`);
+		k++
+	}
+	
+console.log(bondTotal);
+//LET IT GO DAVE! Come back later..
+
+//-
+
 
  	
